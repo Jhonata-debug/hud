@@ -1,0 +1,240 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Nice City</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
+		<link rel="stylesheet" href="style.css" />
+		<script src="jquery.js" defer></script>
+	</head>
+	<body>
+		<div id="progress-container">
+			<svg class="progresss">
+				<circle cx="50" cy="50" r="25"></circle>
+				<circle id="progress-circle" class="progress-fill" cx="50" cy="50" r="25"></circle>
+			</svg>
+			<img src="./images/clock.svg" class="progress-image" />
+		</div>
+
+		<div id="Textform"></div>
+
+		<div id="Body">
+			<div class="NameServer">
+				<img src="images/Logo.png">
+			</div>
+
+			<div id="NaviTop">
+				<div class="InfoUser">
+					<div class="InfoRow">
+						<div class="InfoBlock">
+							<i class="Hensa mdi mdi-clock-outline"></i> <span class="Date">00:00</span>
+						</div>
+
+						<div class="InfoBlock">
+							<i class="Hensa mdi mdi-weather-cloudy"></i> <span class="Weather">Normal</span>
+						</div>
+
+						<div class="InfoBlock">
+							<i class="Hensa mdi mdi-temperature-celsius"></i> <span class="Temperature">Calculando</span>
+						</div>
+					</div>
+
+					<div class="InfoRow">
+						<div id="infoStreet" style="display: none;" class="InfoBlock">
+							<i class="Hensa mdi mdi-map-marker"></i>
+							<u class="UpStreet">Alta-Street / </u>
+							<span class="DownStreet">Hawick Avenue</span>
+						</div>
+
+						<div id="radio_div" class="InfoBlock" style="display: none;">
+							<i class="Hensa mdi mdi-contactless-payment"></i> <span class="Radio">Offline</span>
+						</div>
+
+						<div class="InfoBlock">
+							<i class="Hensa mdi mdi-headphones"></i> <span class="Voip">Normal</span>
+						</div>
+
+						<div class="InfoBlock" style="display: none;">
+							<i class="Hensa mdi mdi-account"></i> <span class="Passport">1</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="NaviWeapons">
+				<div class="NameWeapon"></div>
+				<div class="NameAmmos"></div>
+			</div>
+
+			<div id="NaviMiddle">
+				<section class="container_speedometer" style="display: none;">
+					<div>  
+						<div class="vtop_block">
+							<div class="speed_number">
+								<span id="veloci_speed">000</span>
+								<sub>kmh</sub>
+							</div>
+							<div class="marching_block">
+								<span id="marcha">1</span>
+							</div>
+						</div>
+						<div class="vbottom_block">
+							<div id="bar_1" class="big_bar"></div>
+							<div id="bar_2" class="big_bar"></div>
+							<div id="bar_3" class="big_bar"></div>
+							<div id="bar_4" class="big_bar"></div>
+							<div id="bar_5" class="big_bar"></div>
+							<div id="bar_6" class="big_bar"></div>
+							<div id="bar_7" class="big_bar"></div>
+							<div id="bar_8" class="big_bar"></div>
+							<div id="bar_9" class="big_bar"></div>
+							<div id="bar_10" class="big_bar"></div>
+							<div id="bar_11" class="big_bar"></div>
+							<div id="bar_12" class="big_bar"></div>
+							<div id="bar_13" class="big_bar"></div>
+							<div id="bar_14" class="big_bar"></div>
+							<div class="vlimit">
+								<div id="bar_red_1" class="small_bar"></div>
+								<div id="bar_red_2" class="small_bar"></div>
+								<div id="bar_red_3" class="small_bar"></div>
+								<div id="bar_red_4" class="small_bar"></div>
+								<div id="bar_red_5" class="small_bar"></div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="infos_velocimetro">
+							<div id="nitro"></div>
+							<svg id="cinto" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" style="width: 1.125rem; height: 1.125rem;">
+								<path d="M6.02448 7.90457L3.14803 10.781L3.61417 11.2471L0 14.8613L3.13872 18L6.75288 14.3858L7.21902 14.852L10.0954 11.9755L6.02448 7.90457Z"/>
+								<path d="M18 3.13872L14.8613 0L11.2471 3.61417L10.781 3.14803L7.9046 6.02445L8.52606 6.6459L7.49197 7.67999L10.32 10.508L11.3541 9.47391L11.9755 10.0954L14.8519 7.21895L14.3858 6.75288L18 3.13872ZM10.32 8.89154L9.10846 7.68002L9.3343 7.45418L10.5458 8.6657L10.32 8.89154Z"/>
+							</svg>
+							<svg id="farol" xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="none" style="width: 1.125rem; height: 0.875rem;">
+								<path d="M6.08391 3.07683H1.1873C1.00176 3.07683 0.851315 2.91662 0.851315 2.719V1.74975C0.851315 1.55213 1.00176 1.39192 1.1873 1.39192H6.67335C6.58253 1.57995 6.49673 1.78063 6.41651 1.99452C6.29121 2.32868 6.18007 2.69121 6.08391 3.07683Z"/>
+								<path d="M0 4.92617C0 4.72856 0.150442 4.56835 0.335987 4.56835H5.802C5.72892 5.10737 5.68042 5.6723 5.65802 6.25325H0.336044C0.150461 6.25325 1.90735e-05 6.09304 1.90735e-05 5.89543L0 4.92617Z"/>
+								<path d="M0 9.07187V8.10262C0 7.90499 0.150442 7.74479 0.335987 7.74479H5.658C5.68036 8.32577 5.7289 8.8907 5.80198 9.4297H0.335987C0.150442 9.4297 0 9.26949 0 9.07187Z"/>
+								<path d="M0.851274 12.2483V11.279C0.851274 11.0814 1.00172 10.9212 1.1873 10.9212H6.08391C6.18007 11.3068 6.29121 11.6694 6.41653 12.0035C6.49675 12.2174 6.58255 12.4181 6.67337 12.6062H1.1873C1.00172 12.6061 0.851274 12.4459 0.851274 12.2483Z"/>
+								<path d="M9.08286 13.999C8.314 13.999 7.69531 13.4652 7.22672 12.6061C6.96805 12.132 6.7552 11.5586 6.58804 10.9212C6.46546 10.4539 6.36743 9.95213 6.29405 9.42972C6.21755 8.88525 6.16776 8.31842 6.1447 7.74481C6.12477 7.2493 6.12477 6.74878 6.1447 6.25327C6.16776 5.67967 6.21755 5.11281 6.29405 4.56837C6.36743 4.04596 6.46542 3.54419 6.58804 3.07685C6.7552 2.43948 6.96805 1.86612 7.22672 1.39194C7.69531 0.532805 8.31404 -0.000976562 9.08286 -0.000976562C13.0204 -0.000976563 18 3.13304 18 6.99902C18 10.865 13.0204 13.999 9.08286 13.999Z"/>
+							</svg>
+							<svg id="close" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="14" style="width: 1.125rem; height: 0.875rem;">
+								<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+								<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+								<g id="SVGRepo_iconCarrier">
+									<path d="M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+								</g>
+							</svg>
+							<svg id="open" class="trans_icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="14" style="display: none; width: 1.125rem; height: 0.875rem;">
+								<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+								<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+								<g id="SVGRepo_iconCarrier"> 
+									<path d="M3 3L21 21M17 10V8C17 5.23858 14.7614 3 12 3C11.0283 3 10.1213 3.27719 9.35386 3.75681M7.08383 7.08338C7.02878 7.38053 7 7.6869 7 8V10.0288M19.5614 19.5618C19.273 20.0348 18.8583 20.4201 18.362 20.673C17.7202 21 16.8802 21 15.2 21H8.8C7.11984 21 6.27976 21 5.63803 20.673C5.07354 20.3854 4.6146 19.9265 4.32698 19.362C4 18.7202 4 17.8802 4 16.2V14.8C4 13.1198 4 12.2798 4.32698 11.638C4.6146 11.0735 5.07354 10.6146 5.63803 10.327C5.99429 10.1455 6.41168 10.0647 7 10.0288M19.9998 14.4023C19.9978 12.9831 19.9731 12.227 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C17.773 10.0269 17.0169 10.0022 15.5977 10.0002M10 10H8.8C8.05259 10 7.47142 10 7 10.0288" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> 
+								</g>
+							</svg>
+						</div>
+						<div class="progs_box">
+							<div class="progs_complementares">
+								<svg fill="#ff5963" width="14px" height="15px" style="width: 0.875rem; height: 0.938rem;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M3,2H6C6.28,2 6.53,2.11 6.71,2.29L8.79,4.38L9.59,3.59C10,3.2 10.5,3 11,3H17C17.5,3 18,3.2 18.41,3.59L19.41,4.59C19.8,5 20,5.5 20,6V19A2,2 0 0,1 18,21H8A2,2 0 0,1 6,19V13L6,12V8C6,7.5 6.2,7 6.59,6.59L7.38,5.79L5.59,4H3V2M11,5V7H17V5H11M11.41,11L9.41,9H8V10.41L10,12.41V15.59L8,17.59V19H9.41L11.41,17H14.59L16.59,19H18V17.59L16,15.59V12.41L18,10.41V9H16.59L14.59,11H11.41M12,13H14V15H12V13Z"/></svg>
+								<div class="progress pred">
+									<div id="progress_fuel" class="progress_bar"></div>
+								</div>
+							</div>
+							<div class="progs_complementares">
+								<svg fill="#FFFF" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16px" height="12px" style="width: 1rem; height: 0.75rem;" viewBox="0 0 89.938 89.938"xml:space="preserve">
+									<path d="M88.461,37.406h-1.969c-0.814,0-1.479,0.663-1.479,1.477v25.655c0,0.814,0.662,1.479,1.479,1.479h1.969 c0.813,0,1.477-0.664,1.477-1.479V38.882C89.938,38.069,89.275,37.406,88.461,37.406z"/>
+									<path d="M1.477,36.157C0.664,36.157,0,36.819,0,37.634v28.164c0,0.813,0.663,1.478,1.477,1.478h4.015 c0.814,0,1.477-0.663,1.477-1.478V37.642c0-0.813-0.662-1.477-1.477-1.477H1.477V36.157z"/>
+									<path d="M57.617,71.781c3.294-1.278,6.568-2.595,9.855-3.872c0.293-0.113,0.634-0.152,0.947-0.16 c2.432-0.01,4.864-0.01,7.288-0.01c2.519,0,4.138-1.62,4.138-4.166v-8.331c0-0.597,0.481-1.069,1.069-1.069l1.05-0.027 c0.834,0,0.883-0.323,0.909-0.9l0.021-4.837c0-0.481-0.389-0.871-0.872-0.871h-1.126c-0.598,0-1.079-0.483-1.079-1.08 l0.036-10.101c0.029-1.496-0.576-2.527-1.723-3.352c-1.969-1.42-7.771-5.538-8.719-6.144c-0.652-0.427-1.363-0.597-2.158-0.587 l-10.007-0.01c-0.853,0-1.543-0.691-1.543-1.543v-0.312c0-0.861,0.7-1.562,1.562-1.562h9.07c0.86,0,1.562-0.7,1.562-1.562v-1.809 c0-0.861-0.701-1.562-1.562-1.562H36.222c-0.862,0-1.562,0.7-1.562,1.562v1.809c0,0.861,0.7,1.562,1.562,1.562h9.816 c0.862,0,1.563,0.701,1.563,1.562v0.36c0,0.852-0.691,1.552-1.555,1.542l-9.911-0.037c-1.895-0.057-3.446,0.587-4.886,1.628 c-2.102,1.524-4.165,3.096-6.229,4.668c-0.521,0.397-1.174,0.615-1.827,0.605c-1.987-0.02-3.976-0.02-5.964,0 c-2.471,0.019-4.07,1.609-4.09,4.09l0.028,6.901c0,0.586-0.474,1.069-1.07,1.069h-0.927c-1.127,0-2.036,0.909-2.036,2.036v10.935 c0,1.126,0.909,2.034,2.036,2.034h0.899c0.587,0,1.069,0.475,1.069,1.07c0,1.57-0.01,4.496,0,6.189 c0,1.573-0.028,4.526,2.85,4.526h40.37C56.784,72.027,57.229,71.942,57.617,71.781z"/>
+								</svg>
+								<div class="progress pwhite">
+									<div id="progress_engine" class="progress_bar"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="NaviInfos">
+					<div class="NaviBlock vehicle" style="display: none;">
+						<div id="Fome" class="NaviButton">
+							<img src="images/Hunger.png">
+
+							<svg viewBox="0 0 120 120">
+								<circle class="Fill" cx="60" cy="60" r="58" />
+								<circle class="Circle Hunger" cx="60" cy="60" r="53" stroke="#fc913a" pathLength="100" />
+							</svg>
+						</div>
+
+						<div id="Sede" class="NaviButton">
+							<img src="images/Thirst.png">
+
+							<svg viewBox="0 0 120 120">
+								<circle class="Fill" cx="60" cy="60" r="58" />
+								<circle class="Circle Thirst" cx="60" cy="60" r="53" stroke="#6fa9dc" pathLength="100" />
+							</svg>
+						</div>
+
+						<div id="Estresse" class="NaviButton" style="display: block;">
+							<img src="images/Stress.png">
+
+							<svg viewBox="0 0 120 120">
+								<circle class="Fill" cx="60" cy="60" r="58" />
+								<circle class="Circle Stress" cx="60" cy="60" r="53" stroke="#ffffff40" pathLength="100" />
+							</svg>
+						</div>
+
+						<div id="Tosse" class="NaviButton Cough" style="display: block;">
+							<img src="images/Cough.png">
+
+							<svg viewBox="0 0 120 120">
+								<circle class="Fill" cx="60" cy="60" r="58" />
+								<circle class="Circle Cough" cx="60" cy="60" r="53" stroke="#c6d637" pathLength="100" />
+							</svg>
+						</div>
+
+						<div id="Oxygen" class="NaviButton" style="display: none;">
+							<img src="images/Oxigen.png">
+
+							<svg viewBox="0 0 120 120">
+								<circle class="Fill" cx="60" cy="60" r="58" />
+								<circle class="Circle Oxygen" cx="60" cy="60" r="53" stroke="#A020F0" pathLength="100" />
+							</svg>
+						</div>
+					</div>
+
+					<div class="content-bars" style="display: none;">
+						<div class="armor" style="display: none;">
+							<div class="content-armor"></div>
+							<img src="./assets/icons/armor.svg" />
+						</div>
+						<div style="display: none;" id="health">
+							<div class="content-health"></div>
+							<img src="./assets/icons/heart.svg" />
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div id="NaviBottom">
+				<div class="NaviText Reposed">
+					<u class="ReposedTimer">00:00</u>
+					<span>Repouso</span>
+				</div>
+
+				<div class="NaviIcon Reposed">
+					<i class="Hensa mdi mdi-hospital-box"></i>
+				</div><br>
+
+				<div class="NaviText Wanted">
+					<u class="WantedTimer">00:00</u>
+					<span>Procurado</span>
+				</div>
+
+				<div class="NaviIcon Wanted">
+					<i class="Hensa mdi mdi-alert"></i>
+				</div><br>
+
+			</div>
+
+		</div>
+	</body>
+</html>

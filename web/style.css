@@ -1,0 +1,915 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap");
+
+@font-face {
+	font-family: "Gotham";
+	src: url("fonts/GothamMedium.ttf") format("truetype"); 
+}
+
+:root {	
+	font-size: 16px;
+
+    --white-color: rgb(255, 255, 255);
+
+    --trans-color: rgba(255, 255, 255, 0.336);
+
+    --black-color-t1: rgba(0, 0, 0, 0.35);
+   
+    --transition-time: .4s;
+
+    --chat-height-calc: 86%;
+
+}
+
+html,body {
+	margin: 0;
+	padding: 0; 
+	color: #fff;
+	cursor: default;
+	overflow: hidden;
+	font-family: "Roboto";
+	box-sizing: border-box;
+}
+
+:focus { outline: 0; }
+u { text-decoration: none; }
+::-webkit-scrollbar { width: 0; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: transparent; }
+::-webkit-scrollbar-thumb:hover { background: transparent; }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+#Body, .Reposed, .Wanted {
+	display: none;
+}
+
+#NaviWeapons {
+	top: 10.625rem;
+	right: 3.125rem;
+	color: #ccc;
+	display: none;
+	text-align: right;
+	position: absolute;
+	font-family: "Gotham";
+	text-transform: uppercase;
+}
+
+.NameWeapon {
+	opacity: .5;
+	font-size: 0.875rem;
+}
+
+.NameAmmos {
+	font-size: 1.25rem;
+}
+
+#NaviTop {
+	top: 5%;
+	right: 3%;
+	color: #ccc;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+}
+
+.NameServer {
+	top: 0px;
+	left: 43.2%;
+	position: absolute;
+	animation: rewritten 10s ease-out infinite;
+}
+
+@keyframes rewritten {
+	10%,100% {
+		transform: rotateY(360deg);
+	}
+}
+
+.InfoUser {
+	float: left;
+	font-size: 0.813rem;
+	margin-top: 1.125rem;
+	text-align: right;
+	line-height: 1.125rem;
+	letter-spacing: 0.063rem;
+	text-shadow: 0.063rem 0.063rem #000;
+	display: flex;
+	flex-direction: column;
+	gap: 0.313rem;
+}
+
+.InfoRow {
+	display: flex;
+	gap: 0.313rem;
+	justify-content: flex-end;
+}
+
+.InfoBlock {
+	background-color: rgba(15,15,15,.75);
+	padding: 0.313rem 0.625rem;
+	border-radius: 5px;
+}
+
+.InfoBlock > i {
+	color: white;
+}
+
+space {
+	opacity: .35;
+	border-left: 0.063re,;
+	padding-left: 0.313rem;
+	margin-right: 0.313rem;
+	text-shadow: none;
+}
+
+#NaviBottom {
+	right: 25rem;
+	bottom: 3.125rem;
+	font-size: 1rem;
+	text-align: right;
+	position: absolute;
+	text-shadow: 1px 1px #000;
+}
+
+.NaviText {
+	float: left;
+	width: 18.75rem;
+	font-size: 0.875rem;
+	margin-top: 1.25rem;
+	letter-spacing: 1px;
+}
+
+.NaviText > span {
+	opacity: .5;
+	display: block;
+	font-size: 0.688rem;
+	letter-spacing: 1px;
+}
+
+.NaviIcon {
+	width: 2.5rem;
+	float: left;
+	font-size: 1.375rem;
+	margin-top: 1.25rem;
+	padding-top: 0.25rem;
+}
+
+.NaviMiddle_2 {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	position: absolute;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.NaviMiddle_2 > div > div {
+	display: block;
+	margin-bottom: 0.313rem;
+}
+
+
+#NaviMiddle {
+  display: flex;
+  position: absolute;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  width: 95%;
+  bottom: 4.375rem;
+  right: 4.375rem;
+  gap: 0.7rem;
+}
+
+.NaviInfos {
+	display: flex;
+	align-items: end;
+	flex-direction: column;
+	position: relative;
+	width: 100%;
+	gap: 0.313rem;
+}
+
+.NaviInfos > .NaviBlock {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 3rem;
+	gap: 0.875rem;
+	transform: scaleX(-1);
+}
+
+.NaviBlock:not([class*="vehicle"]) {
+	min-width: 13.625rem;
+}
+
+/* .NaviInfos > .NaviBlock {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	position: relative;
+	top: 27rem;
+	left: 18rem;
+	width: 9.5rem;
+	height: 3rem;
+	gap: 0.875rem;
+	transform: scaleX(-1);
+} */
+
+.NaviInfos > div > div:last-child {
+	margin-bottom: 0;
+}
+
+.NaviInfos > .NaviBlock > .NaviButton {
+	display: flex;
+	position: relative;
+	transition: all .8s all ease;
+}
+
+.stats > .NaviButton {
+	position: relative;
+}
+
+.NaviInfos > .NaviBlock > .NaviButton > svg, .stats > .NaviButton > svg {
+	width: 2.5rem;
+	height: 2.5rem;
+	stroke-dashoffset: 0;
+	stroke-dasharray: 100;
+	transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+}
+
+.NaviInfos > .NaviBlock > .NaviButton > svg > .Circle, .stats > .NaviButton > svg > .Circle {
+	fill: none;
+	transition: all 1s;
+	stroke-width: 0.625rem;
+	stroke-dashoffset: 0;
+	stroke-dasharray: 100;
+}
+
+.stats > .NaviButton > svg > .Nitro {
+	stroke-width: 0.5rem;
+	stroke-dashoffset: 100;
+}
+
+.NaviInfos > .NaviBlock > .NaviButton > img, .stats > .NaviButton > img {
+	width: 2.125rem;
+	height: 2.125rem;
+	top: 0.188rem;
+	left: 0.188rem;
+	z-index: 1;
+	position: absolute;
+}
+
+.NaviInfos > .NaviBlock > .NaviButton > svg > .Fill, .stats > .NaviButton > svg > .Fill {
+	stroke-width: 0.25rem;
+	stroke: transparent;
+	stroke-dashoffset: 0;
+	stroke-dasharray: 100;
+	fill: rgba(15,15,15,.75);
+}
+
+/* ---------------- VELOCÍMETRO FULL ---------------- */
+
+#Body .container_speedometer {
+
+    display: flex;
+    align-items: flex-end;
+    gap: 0.625rem;
+    animation: fade-out-in 1.4s ease-in both;
+}
+
+#Body .vtop_block {
+
+    display: flex;
+    align-items: flex-end;
+    gap: 0.813rem;
+    margin-bottom: .9rem;
+
+}
+
+#Body .vtop_block .speed_number {
+
+    display: flex;
+    align-items: flex-end;
+    gap: 0.25rem;
+
+}
+
+#Body .vtop_block .speed_number span {
+
+    color: rgba(255, 255, 255, .25);
+    font-size: 3.75rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 3rem;
+    transition: all var(--transition-time);
+
+}
+
+#Body .vtop_block .speed_number sub {
+
+    font-size: .94rem;
+    letter-spacing: 2.18px;
+
+}
+
+#Body .vtop_block .marching_block {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 1.125rem;
+    height: 1.188rem;   
+    border-radius: 0.188rem;
+    background-color: var(--white-color);
+
+}
+
+#Body .vtop_block .marching_block span {
+
+    font-size: .88rem;
+    color: rgb(30, 31, 31);
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-top: 1px;
+    margin-left: 0.156rem;
+
+}
+
+#Body .vbottom_block {
+
+    display: flex;
+    gap: 0.313rem;
+    width: 100%;
+    min-height: 2rem;
+    padding-left: .05rem;
+    transition: all var(--transition-time);
+
+}
+
+#Body .vbottom_block .vlimit {
+
+    display: flex;
+    gap: 0.25rem;    
+
+}
+
+#Body .vbottom_block .big_bar, #Body .vbottom_block .small_bar {
+
+    border-radius: 100px;
+    min-height: 100%;
+    transition: all var(--transition-time);
+
+}
+
+#Body .vbottom_block .big_bar {
+
+    width: 0.438rem;
+    background: rgba(255, 255, 255, .1);
+
+}
+
+#Body .vbottom_block .small_bar {
+
+    width: 0.188rem;
+    background: rgba(255, 89, 99, .1);
+
+}
+
+#Body .vbottom_block .full_white {
+
+    background-color: var(--white-color);
+
+}
+
+#Body .vbottom_block .full_red {
+
+    background-color: rgb(255, 89, 99);
+
+}
+
+#Body .infos_velocimetro {
+    display: flex;
+	align-items: baseline;
+    justify-content: flex-end;
+    gap: 0.438rem;
+    margin-bottom: .8rem;
+
+}
+
+#Body .infos_velocimetro svg path {
+
+    fill: var(--white-color);
+    fill-opacity: .1;
+
+}
+
+#Body .infos_velocimetro .white_icon path {
+
+    fill: var(--white-color);
+    fill-opacity: 1;
+
+}
+
+#Body .infos_velocimetro .trans_icon {
+
+    opacity: .1;
+
+}
+
+#Body .progs_complementares {
+
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+        
+}
+
+#Body .progs_complementares .progress {
+    
+    width: 8.188rem;
+    height: 0.438rem;
+    border-radius: 1.625rem;
+    
+}
+
+#Body .progs_complementares .progress .progress_bar {
+    
+    width: 35%;
+    height: 100%;
+    border-radius: 1.625rem;
+
+}
+
+#Body .pred {
+
+    background: rgba(255, 89, 99, .1);
+
+}
+
+#Body .pwhite {
+
+    background: rgba(255, 255, 255, .1);
+
+}
+
+#Body .pred .progress_bar {
+
+    background: #FF5963;
+    box-shadow: 0px 0px 0.563rem 0px rgba(255, 89, 99, 0.25);
+
+}
+
+#Body .pwhite .progress_bar {
+
+    background: var(--white-color);
+    box-shadow: 0px 0px 0.563rem 0px rgba(255, 255, 255, 0.25);
+
+}
+
+#Body .progs_box .progs_complementares:first-child {
+
+    margin-bottom: .5rem;
+    padding-left: 0.125rem;
+
+}
+
+#Body .progs_box .progs_complementares:first-child svg {
+
+    margin-right: .3.25rem;
+    transform: scaleX(-1);
+
+}
+
+
+
+/* */
+
+.Gray {
+	fill: #ccc;
+	color: #ccc;
+}
+
+.Yellow {
+	fill: #fec026;
+	color: #fec026;
+}
+
+.Green {
+	fill: #83d52b;
+	color: #83d52b;
+}
+
+.Red {
+	fill: #f43252;
+	color: #f43252;
+}
+
+.Blue {
+	fill: #40a7f7;
+	color: #40a7f7;
+}
+
+.Hensa {
+	fill: #6fa9dc;
+	color: #6fa9dc;
+}
+
+.Textform {
+	color: #fff;
+	padding: 0.938rem;
+	font-size: 0.813rem;
+	max-width: 15.625rem;
+	line-height: 0.938rem;
+	text-align: center;
+	position: absolute;
+	letter-spacing: 1px;
+	background: #141414;
+	word-wrap: break-word;
+}
+
+.content-bars {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	/* width: 13.625rem; */
+	width: 22.625rem;
+	/* border-radius: 5px; */
+	gap: 0.313rem;
+}
+
+#health {
+	width: 100%;
+	height: 1.75rem;
+	border-radius: 0.25rem;
+	/* border: .3px solid rgba(255, 255, 255, 0.39); */
+	transition: all .8s ease;
+}
+
+#health > img {
+	position: relative;
+	width: 0.938rem;
+	height: 0.875rem;
+	bottom: 80%;
+	left: 4%;
+}
+
+.content-health {
+	width: 20%;
+	height: 100%;
+	transition: all .8s ease;
+	background-color: #007cff;
+	border-radius: 5px;
+}
+
+.armor {
+	width: 100%;
+	height: 1.75rem;
+	border-radius: 0.25rem;
+	border: .2px solid rgba(255, 255, 255, 0.226);
+	transition: all .8s ease;
+}
+
+.armor > img {
+	position: relative;
+	width: 1rem;
+	height: 1rem;
+	left: 4%;
+	bottom: 80%;
+}
+
+.content-armor {
+	width: 20%;
+	height: 100%;
+	transition: all .8s ease;
+	background-color: #240fdd;
+	border-radius: 0.25rem;
+}
+
+.NaviBlock[class*="vehicle"] {
+	position: absolute;
+	flex-direction: column-reverse;
+	left: 17%;
+	bottom: 5rem;
+}
+
+.NaviBlock[class*="vehicle"]:not(:has(#Oxygen[style*="none"])) #Estresse {
+	right: 1.9rem;
+}
+
+.NaviBlock[class*="vehicle"]:not(:has(#Oxygen[style*="none"])) #Sede {
+	right: 1.7rem;
+}
+
+.NaviBlock[class*="vehicle"] #Estresse {
+	position: relative;
+	right: 1.7rem;
+}
+
+.NaviBlock[class*="vehicle"] #Sede {
+	position: relative;
+	right: 1.7rem;
+}
+
+@media only screen and (min-width: 700px) and (max-width: 900px) {
+	:root {
+		font-size: 9px;
+	}
+
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+		left: 30%;
+	}
+} 
+
+@media only screen and (min-width: 1000px) and (max-width: 1030px) {
+	:root {
+		font-size: 12px;
+	}
+	
+	.NaviBlock[class*="vehicle"] {
+		top: -6rem;
+		bottom: 3.5rem;
+	}
+} 
+
+@media only screen and (min-width: 1090px) and (max-width: 1200px) {
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+		left: 29.5%;
+		top: -6.8rem;
+	}
+} 
+
+@media only screen and (min-width: 1150px) and (max-width: 1160px) {
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+		left: 50%;
+		top: -4.5rem;
+	}
+} 
+
+@media only screen and (min-width: 1161px) and (max-width: 1180px) {
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+		left: 17.2%;
+		top: -2.8rem;
+		zoom: 70%
+	}
+}
+
+@media only screen and (min-width: 1270px) and (max-width: 1290px) and (max-height: 725px) {
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+		top: -3.2rem;
+		zoom: 70%
+	}
+} 
+
+@media only screen and (min-width: 1270px) and (max-width: 1290px) and (min-height: 760px) and (max-height: 770px) {
+	:root {
+		font-size: 12px;
+	}
+
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+	}
+}  
+
+@media only screen and (min-width: 1270px) and (max-width: 1290px) and (min-height: 790px) and (max-height: 810px) {
+
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+		top: -4.5rem;
+		zoom: 70%
+	}
+} 
+
+@media only screen and (min-width: 1270px) and (max-width: 1290px) and (min-height: 950px) and (max-height: 970px) {
+	:root {
+		font-size: 15px;
+	}
+	
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+		left: 28%;
+	}
+} 
+
+@media only screen and (min-width: 1270px) and (max-width: 1290px) and (min-height: 1020px) and (max-height: 1030px) {
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+	}
+} 
+
+@media only screen and (min-width: 1350px) and (max-width: 1362px) {
+	:root {
+		font-size: 12px;
+	}
+
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+		left: 16%
+	}
+}
+
+@media only screen and (min-width: 1363px) and (max-width: 1370px) {
+	:root {
+		font-size: 12px;
+	}
+
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+		left: 16%
+	}
+}
+
+@media only screen and (min-width: 1439px) and (max-width: 1450px) and (max-height: 910px) {
+	:root {
+		font-size: 14px;
+	}
+
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+		left: 39%;
+	}
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1450px) and (min-height: 1000px) {
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+		left: 23%;
+		top: -6.5rem;
+	}
+}
+
+@media only screen and (min-width: 1590px) and (max-width: 1610px) and (max-height: 910px) {
+	:root {
+		font-size: 14px;
+	}
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+		left: 16%;
+	}
+} 
+
+@media only screen and (min-width: 1590px) and (max-width: 1610px) and (min-height: 1000px) {
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+		left: 18%;
+	}
+} 
+
+@media only screen and (min-width: 1670px) and (max-width: 1690px) {
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+		left: 15%;
+	}
+} 
+
+@media only screen and (min-width: 1720px){
+	.NaviBlock[class*="vehicle"] {
+		bottom: 5rem;
+		left: 16%;
+	}
+} 
+
+.progresss {
+    width: 7.5rem;
+    height: 7.5rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    --tw-translate-x: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.progresss circle {
+    stroke-width: 0.313rem;
+    stroke: rgb(0 0 0 / 0.45);
+    transform: translate(10px, 10px);
+    stroke-dasharray: 160;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    width: 13.75rem;
+    height: 13.75rem;
+    transition: stroke-dashoffset 500ms ease-in-out;
+    position: relative;
+    fill: none;
+}
+
+#progress-container {
+    width: 7.5rem;
+    height: 7.5rem;
+    opacity: 0;
+    position: absolute;
+    left: 48%;
+    bottom: 13%;
+    transform: translate(-50%, 0%);
+}
+
+.progresss .progress-fill {
+    stroke: #1487f3;
+    stroke-dashoffset: 80;
+    transform-origin: center;
+    transform: translate(10px, -10px) rotate(-90deg);
+}
+
+.progress-image {
+	width: 1.25rem;
+	height: 1.25rem;
+    position: absolute;
+    top: 49.8%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* @media (min-aspect-ratio: 5/4) and (max-width: 1920px) {
+	.Estresse {
+		position: absolute; 
+		left: 67vw; 
+		bottom: 14.4em;
+	}
+	
+	.Tosse {
+		position: absolute; 
+		left: 62.3vw; 
+		bottom: 9.7em;
+	}
+	
+	.Sede {
+		position: absolute; 
+		left: 67.5vw; 
+		bottom: 4.2em;
+	}
+	
+	.Fome {
+		position: absolute; 
+		left: 71vw; 
+		bottom: -1.1em;
+	}
+}   */
+
+/*@media (min-aspect-ratio: 16/9) and (max-width: 1910px) {
+	.Estresse {
+		position: relative;
+		left: 79.6vw;
+		bottom: 16.5em;
+		zoom: 0.9;
+	}
+	
+	.Tosse {
+		position: relative;
+		left: 75.4vw;
+		bottom: 11.6em;
+		zoom: 0.9;
+	}
+	
+	.Sede {
+		position: relative;
+		left: 81.2vw;
+		bottom: 6.6em;
+		zoom: 0.9;
+	}
+	
+	.Fome {
+		position: relative;
+		left: 84.6vw;
+		bottom: 1.5em;
+		zoom: 0.9;
+	}
+} */
+
+#nitro {
+	--nitroSet: 0%;
+	width: 42px;
+	height: 19px;
+
+	-webkit-mask: url("./images/nitro.svg");
+	-webkit-mask-repeat: no-repeat;
+
+	background: #ffffff1a;
+}
+
+#nitro::before {
+	content: "";
+	display: block;
+	width: var(--nitroSet);
+	height: 100%;
+	background: #1487f3;
+}
+
+#nitro .ldBar-label {
+	display: none;
+}
